@@ -7,6 +7,9 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositori
     apk add --no-cache bash confd && \
     mkdir -p /app/conf
 
+# Copy common confd templates
+COPY etc/confd /etc/confd
+
 # Set entrypoint
 COPY entrypoint.sh /app/entrypoint.sh
 ENTRYPOINT ["/app/entrypoint.sh"]
