@@ -13,4 +13,4 @@ COPY etc/confd /etc/confd
 # Set entrypoint and default command arguments
 COPY entrypoint.sh /app/entrypoint.sh
 ENTRYPOINT ["/app/entrypoint.sh"]
-CMD ["java", "-jar", "/app/app.jar", "-cluster", "-Dvertx.hazelcast.config=/app/conf/cluster.xml"]
+CMD ["java", "-jar", "/app/app.jar", "-server", "-cluster", "-Dvertx.hazelcast.config=/app/conf/cluster.xml"]
