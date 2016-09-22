@@ -6,6 +6,7 @@
   "/cluster/group/password",
   "/cluster/aws",
   "/cluster/aws/group",
+  "/cluster/aws/iam",
   "/cluster/port",
   "/aws/default/region"
  ]

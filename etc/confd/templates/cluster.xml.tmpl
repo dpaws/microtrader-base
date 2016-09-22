@@ -34,6 +34,7 @@
       <aws enabled="true">
         <region>{{getv "/aws/default/region" "ap-southeast-2"}}</region>
         <security-group-name>{{getv "/cluster/aws/group" "microtrader-hazelcast"}}</security-group-name>
+        <iam-role>{{getv "/cluster/aws/iam" "microtrader-hazelcast"}}</iam-role>
       </aws>
       {{else}}
       <multicast enabled="true"/>
