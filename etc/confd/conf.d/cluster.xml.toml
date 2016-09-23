@@ -10,5 +10,6 @@
   "/cluster/aws/iam/role",
   "/cluster/aws/tag/key",
   "/cluster/aws/tag/value",
+  "/cluster/public/port",
   "/cluster/port"
  ]
