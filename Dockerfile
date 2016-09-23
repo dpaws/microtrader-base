@@ -3,8 +3,7 @@ MAINTAINER Justin Menga <justin.menga@gmail.com>
 
 # Install system dependencies
 RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
-    apk update && \
-    apk add --no-cache bash confd && \
+    apk add --update --no-cache bash curl confd && \
     mkdir -p /app/conf
 
 # Copy common confd templates

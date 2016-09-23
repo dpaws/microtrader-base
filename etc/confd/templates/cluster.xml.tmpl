@@ -27,7 +27,7 @@
       <ports>0</ports>
     </outbound-ports>
     <join>
-      {{if exists "/cluster/aws"}}
+      {{if exists "/cluster/aws/enabled"}}
       <multicast enabled="false"/>
       <tcp-ip enabled="false">
           <interface>127.0.0.1</interface>
