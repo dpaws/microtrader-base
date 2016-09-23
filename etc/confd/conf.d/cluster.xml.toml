@@ -4,6 +4,7 @@
  keys = [
   "/cluster/group/name",
   "/cluster/group/password",
+  "/cluster/public/address",
   "/cluster/aws",
   "/cluster/aws/region",
   "/cluster/aws/iam/role",

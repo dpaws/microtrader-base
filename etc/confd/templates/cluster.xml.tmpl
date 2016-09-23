@@ -17,6 +17,7 @@
   {{end}}
   <management-center enabled="false">http://localhost:8080/mancenter</management-center>
   <network>
+    <public-address>{{getv "/cluster/public/address" ""}}</public-address>
     <port auto-increment="true" port-count="10000">{{getv "/cluster/port" "5701"}}</port>
     <outbound-ports>
       <!--
