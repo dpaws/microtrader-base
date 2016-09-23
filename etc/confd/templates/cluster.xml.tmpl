@@ -32,9 +32,10 @@
           <interface>127.0.0.1</interface>
       </tcp-ip>
       <aws enabled="true">
-        <region>{{getv "/aws/default/region" "ap-southeast-2"}}</region>
-        <security-group-name>{{getv "/cluster/aws/group" "microtrader-hazelcast"}}</security-group-name>
-        <iam-role>{{getv "/cluster/aws/iam" "microtrader-hazelcast"}}</iam-role>
+        <region>{{getv "/cluster/aws/region" "ap-southeast-2"}}</region>
+        <iam-role>{{getv "/cluster/aws/iam/role" "DEFAULT"}}</iam-role>
+        <tag-key>{{getv "/cluster/aws/tag/key" "hazelcast:group"}}</tag-key>
+        <tag-value>{{getv "/cluster/aws/tag/value" "microtrader"}}</tag-value>
       </aws>
       {{else}}
       <multicast enabled="true"/>

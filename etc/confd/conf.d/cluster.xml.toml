@@ -5,8 +5,9 @@
   "/cluster/group/name",
   "/cluster/group/password",
   "/cluster/aws",
-  "/cluster/aws/group",
-  "/cluster/aws/iam",
-  "/cluster/port",
-  "/aws/default/region"
+  "/cluster/aws/region",
+  "/cluster/aws/iam/role",
+  "/cluster/aws/tag/key",
+  "/cluster/aws/tag/value",
+  "/cluster/port"
  ]
