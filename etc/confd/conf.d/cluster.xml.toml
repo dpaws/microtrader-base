@@ -11,5 +11,6 @@
   "/cluster/aws/tag/key",
   "/cluster/aws/tag/value",
   "/cluster/public/port",
-  "/cluster/port"
+  "/cluster/port",
+  "/cluster/max/no/heartbeat"
  ]
