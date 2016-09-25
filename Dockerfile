@@ -10,6 +10,6 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositori
 COPY etc/confd /etc/confd
 
 # Set entrypoint and default command arguments
-COPY entrypoint.sh /app/entrypoint.sh
+COPY *.sh /app/
 ENTRYPOINT ["/app/entrypoint.sh"]
-CMD ["java", "-jar", "/app/app.jar", "-server", "-cluster", "-Dvertx.hazelcast.config=/app/conf/cluster.xml"]
+CMD ["/app/start.sh"]
