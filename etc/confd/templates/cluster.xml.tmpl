@@ -8,9 +8,6 @@
     <property name="hazelcast.rest.enabled">false</property>
     <property name="hazelcast.wait.seconds.before.join">0</property>
     <property name="hazelcast.max.no.heartbeat.seconds">{{getv "/cluster/max/no/heartbeat" "10"}}</property>
-    {{if exists "/cluster/public/address"}}
-    <property name="hazelcast.local.localAddress">{{getv "/cluster/public/address"}}</property>
-    {{end}}
   </properties>
 
   {{if exists "/cluster/group/password"}}
