@@ -30,11 +30,17 @@
       <ports>0</ports>
     </outbound-ports>
     <join>
+      {{if exists "/cluster/public/address"}}
+      <tcp-ip enabled="true">
+        <interface>{{getv "/cluster/public/address"}}</interface>
+      </tcp-ip>
+      {{else}}
+      <tcp-ip enabled="false">
+        <interface>127.0.0.1</interface>
+      </tcp-ip>
+      {{end}}
       {{if exists "/cluster/aws/enabled"}}
       <multicast enabled="false"/>
-      <tcp-ip enabled="false">
-          <interface>127.0.0.1</interface>
-      </tcp-ip>
       <aws enabled="true">
         <region>{{getv "/cluster/aws/region" "ap-southeast-2"}}</region>
         <iam-role>{{getv "/cluster/aws/iam/role" "DEFAULT"}}</iam-role>
@@ -44,7 +50,7 @@
       {{else}}
       <multicast enabled="true"/>
       <tcp-ip enabled="false">
-          <interface>127.0.0.1</interface>
+        <interface>127.0.0.1</interface>
       </tcp-ip>
       {{end}}
     </join>
