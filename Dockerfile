@@ -1,5 +1,6 @@
 FROM openjdk:8-jre-alpine
 MAINTAINER Justin Menga <justin.menga@gmail.com>
+LABEL application=microtrader
 
 # Install system dependencies
 RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
