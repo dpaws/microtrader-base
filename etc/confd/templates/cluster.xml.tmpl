@@ -18,9 +18,6 @@
   {{end}}
   <management-center enabled="false">http://localhost:8080/mancenter</management-center>
   <network>
-    {{if exists "/cluster/public/address"}}
-    <public-address>{{getv "/cluster/public/address"}}:{{getv "/cluster/public/port" "5701"}}</public-address>
-    {{end}}
     <port auto-increment="true" port-count="10000">{{getv "/cluster/port" "5701"}}</port>
     <outbound-ports>
       <!--
@@ -30,23 +27,23 @@
       <ports>0</ports>
     </outbound-ports>
     <join>
-      {{if exists "/cluster/aws/enabled"}}
+      {{- if eq (getv "/cluster/aws/enabled" "false") "true" }}
       <multicast enabled="false"/>
       <tcp-ip enabled="false">
           <interface>127.0.0.1</interface>
       </tcp-ip>
       <aws enabled="true">
-        <region>{{getv "/cluster/aws/region" "ap-southeast-2"}}</region>
+        <region>{{getv "/cluster/aws/region" "us-west-2"}}</region>
         <iam-role>{{getv "/cluster/aws/iam/role" "DEFAULT"}}</iam-role>
         <tag-key>{{getv "/cluster/aws/tag/key" "hazelcast:group"}}</tag-key>
         <tag-value>{{getv "/cluster/aws/tag/value" "microtrader"}}</tag-value>
       </aws>
-      {{else}}
+      {{- else }}
       <multicast enabled="true"/>
       <tcp-ip enabled="false">
           <interface>127.0.0.1</interface>
       </tcp-ip>
-      {{end}}
+      {{- end }}
     </join>
     <interfaces enabled="false">
       <interface>10.10.1.*</interface>

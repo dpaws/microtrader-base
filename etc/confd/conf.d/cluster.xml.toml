@@ -2,15 +2,13 @@
  src   = "cluster.xml.tmpl"
  dest  = "/app/conf/cluster.xml"
  keys = [
+  "/cluster/port",
   "/cluster/group/name",
   "/cluster/group/password",
-  "/cluster/public/address",
   "/cluster/aws/enabled",
   "/cluster/aws/region",
   "/cluster/aws/iam/role",
   "/cluster/aws/tag/key",
   "/cluster/aws/tag/value",
-  "/cluster/public/port",
-  "/cluster/port",
   "/cluster/max/no/heartbeat"
  ]
