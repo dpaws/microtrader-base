@@ -27,7 +27,7 @@
       <ports>0</ports>
     </outbound-ports>
     <join>
-      {{- if eq (getv "/cluster/aws/enabled" "false") "true" }}
+      {{- if eq (toLower (getv "/cluster/aws/enabled" "false")) "true" }}
       <multicast enabled="false"/>
       <tcp-ip enabled="false">
           <interface>127.0.0.1</interface>
