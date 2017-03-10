@@ -7,5 +7,5 @@ This provides the base Docker image for sample applications included with the Pl
 To build this image: 
 
 ```
-$ docker build -t <org-name>/microtrader-base .
+$ docker build -t <registry-name>/<org-name>/microtrader-base .
 ```
